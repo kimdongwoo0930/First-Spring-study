@@ -2,9 +2,13 @@ package com.example.spring.study.dto;
 
 import com.example.spring.study.entity.Article;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @AllArgsConstructor
+@Setter
+@NoArgsConstructor
 @ToString
 public class ArticleForm {
 
