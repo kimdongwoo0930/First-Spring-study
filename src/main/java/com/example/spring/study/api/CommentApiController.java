@@ -1,6 +1,7 @@
 package com.example.spring.study.api;
 
 import com.example.spring.study.dto.CommentDto;
+import com.example.spring.study.entity.Comment;
 import com.example.spring.study.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,19 @@ public class CommentApiController {
         return ResponseEntity.status(HttpStatus.OK).body(dtos);
     }
     // 댓글 수정
+    @PatchMapping("/api/comments/{id}")
+    public ResponseEntity<CommentDto> update(@RequestBody CommentDto dto,@PathVariable Long id){
+        // 서비스 위임
+        CommentDto dtos = commentService.update(dto,id);
 
+        return ResponseEntity.status(HttpStatus.OK).body(dtos);
+    }
     // 댓글 삭제
+    @DeleteMapping("/api/comments/{id}")
+    public ResponseEntity<CommentDto> delete(@PathVariable Long id){
+        //서비스
+        CommentDto dtos = commentService.delete(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(dtos);
+    }
 }

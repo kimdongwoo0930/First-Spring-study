@@ -32,4 +32,12 @@ public class Comment {
         if(dto.getArticleId() != article.getId()) throw new IllegalArgumentException("게시글의 아이디가 잘못되었습니다.");
         return new Comment(dto.getId(),article,dto.getNickname(),dto.getBody());
     }
+
+    public void patch(CommentDto dto) {
+        if(this.id != dto.getId()) throw new IllegalArgumentException("잘못된 id");
+
+         //객체를 갱신
+        if (dto.getNickname() != null) this.nickname = dto.getNickname();
+        if (dto.getBody() != null) this.body = dto.getBody();
+    }
 }
