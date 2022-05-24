@@ -3,7 +3,6 @@ package com.example.spring.study.api;
 
 import com.example.spring.study.dto.ArticleForm;
 import com.example.spring.study.entity.Article;
-import com.example.spring.study.repository.ArticleRepository;
 import com.example.spring.study.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
